@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+    <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+    <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+    <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+    <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+    <head>
+        <title>Sympodial</title>
+        <link rel="icon" href="/img/favicon.ico" />
+        <meta name="description" content="Sympodial is the home of Barry Melton, an Annapolis-based web developer." />
+        <meta name="keywords" content="Annapolis, Baltimore, DC, Web, Developer, HTML, CSS, Python, AJAX, Javascript" />
+        <link rel="alternate" title="Sympodial RSS Feed" href="/rss" type="application/rss+xml" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link href="http://fonts.googleapis.com/css?family=Lato:300,900" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="/css/base.css">
+        <link rel="stylesheet" href="/css/skeleton.css">
+        <link rel="stylesheet" href="/css/layout.css">
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <div class="container" style="text-align: left;">
+            <div class="sixteen columns alpha omega" style="margin-bottom: 20px; text-align: left;">
+                <div class="four columns alpha">
+                    <div class="four columns alpha omega">
+                        <a href="/"><h1>Sympodial</h1></a>
+                    </div>
+                    <div class="four columns" style="padding: 0 0 0 40px; margin-top: -10px;">
+                        <a href="/rss" title="RSS Feed"><img src="/img/feed.gif" alt="RSS Feed" /></a>
+                        <a href="https://plus.google.com/115219996855661305324/" title="Google Plus"><img src="/img/googleplus.png" alt="Google Plus" /></a>
+                        <a href="http://twitter.com/bmelton" title="bmelton on Twitter"><img src="/img/twitter.png" alt="bmelton on Twitter" /></a>
+                        <a href="http://last.fm/user/bmelton" title="bmelton on last.fm"><img src="/img/lastfm.png" alt="bmelton on last.fm" /></a>
+                        <a href="http://github.com/bmelton" title="bmelton on github"><img src="/img/github.png" alt="bmelton on github" /></a>
+                    </div>
+                    <div clas="four columns">
+                        <h3>Recently</h3>
+<ul>
+    
+    <li><a href="/archives.html">More</a></li>
+</ul>
+                    </div>
+                </div>
+                <div class="twelve columns alpha omega">
+                    
+    <p>As I mentioned in <a href="http://sympodial.com/blog/javascript-meteor-future/" target="_blank">an earlier post</a>,
+there's a new dynamic Javascript framework on the block, <a target="_blank">Meteor</a>.  I've had some time to play with
+it now, and I've seen a myriad of comments and questions in the #Meteor room on freenode, so I thought I'd share my
+progress thus far. </p>
+<p>There's quite a bit of controversy regarding Meteor at the moment.  <a href="http://nodejs.org/"
+target="_blank">Node.js</a> purists seem to be complaining that Meteor doesn't leverage <a href="http://npmjs.org/"
+target="_blank">NPM</a>, that it uses <a href="https://github.com/laverdet/node-fibers" target="_blank">Node-Fibers</a>,
+instead of the typical asynchronous style of Node, that it's licensed with GPL, versus a more permissive
+attribution-style license.  </p>
+<p>The first two issues are, frankly, over my head.  I mean, I can point you at the <a href="http://docs.meteor.com/"
+target="_blank">Meteor docs</a>, where they indicate that "the linear execution model a better fit for the typical
+server code in a Meteor application", or that the Meteor 'Smart Packages' are far more approachable than NPM, but as
+I've said, I'm a relative newcomer to Javascript on the server, so my opinion wouldn't be that well formed.  As for the
+license, that is of course for you to determine on your own whether the fit is appropriate. </p>
+<p>I could also point out that <a href="http://meteor.com/about/people" target="_blank">the Meteor team</a> has some
+serious street cred, and that despite what appears to be an entire community yelling at how they're <em>doing it all
+wrong&trade;</em>, one might be willing to put their faith in the technical prowess of the team.  If you're an
+experienced Node developer, you almost certainly have a more informed opinion than mine.  </p>
+<p>What I can say with certainty though, is that even though this is a <strong>very</strong> early release of their
+product, I've been able to do things in Javascript I've never been able to before.  In writing the very early parts of
+<a href="http://github.com/bmelton/Orbvt" target="_blank">Orbvt</a>, I've had a lot of ups and downs in understanding
+the framework, and some of its incompleteness has bitten me in the ass (it is only at a .3.4preview status, after all),
+but the amount of code that I have NOT had to write is what makes it shine. </p>
+<h2>Getting Started</h2>
+
+<p>To start playing with Meteor, you can run the following (on supported operating systems) <span class="code">curl
+install.meteor.com | sh</span>.  On OSX Lion, this ran flawlessly.  In the IRC channel, a common issue arose for users
+already running a Mongo database causing problems.  If so, you can override which Mongo instance your app uses with an
+environment variable.  <span class="code">export MONGO_URL=mongodb://user.password@host:port/databasename</span> where
+host is <em>probably</em> localhost, and port is <em>probably</em> 27017.  </p>
+<p>To create a new application, <span class="code">meteor create <em>meteor-intro</em></span> will get you started.  <span
+class="code">cd meteor-intro</span> into your new app folder.  To start the app that's there, just run <span
+class="code">meteor</span>, then open up a browser and visit <span class="code">localhost:3000</span>.  You should see a
+"Hello World!" page with a button.  Clicking the button logs an entry into your browser's Javascript console (which you
+should open to see.)</p>
+<p>So far, the hardest part has been reading all my wordy ranting in this blog post.  If you wanted, we could now open a
+new console window (so as not to interrupt our server) for file editing (or use your text editor of choice).  Inside our
+meteor-intro folder, we have three files (and one hidden <span class="code">.meteor</span> folder,) meteor-intro.css,
+meteor-intro.html and meteor-intro.js.  </p>
+<p>If we look at the meteor-intro.js file in a text editor, we'll see this: 
+<script src="https://gist.github.com/2384744.js"> </script></p>
+<p>Probably the first Meteor-specific thing we need to show here are the <span class="code">if (Meteor.is_client)</span>
+and <span class="code">if (Meteor.is_server)</span> blocks.  As we know, Meteor is based on Node, so we're using
+Javascript as both the front and backend languages.  In this one-file paradigm that we've started with, we can have both
+components be served by the same file.  </p>
+<p>You might put your database methods, or authorization code on the 'is_server' side, and similarly you would probably not
+want to render the end user's templates from the client side.  Though those of those <em>can</em> possibly be done from
+either location, we'll try to do what makes sense. </p>
+<p>It's worth noting that you could create a "server" folder to store server code in, and a "client" folder to store client
+code in as well, but you don't necessarily need to for smallish apps.  As the application grows larger, we may migrate
+from the 'one-page' design into something more structured, but Meteor allows for both. </p>
+<p>Now that we understand that, the first line of real code is the <span class="code">Template.hello.greeting</span> line.
+Meteor uses <a href="http://mustachejs.org/" target="_blank">Mustache Templates</a>, and this line (along with some
+backend Meteor magic) binds a Template item to a function, and also binds an 'Observer' to that function.  We'll get to
+more about what that means later, but put simply, an Observer watches the function and does <em>something</em> when the
+result of the function changes.  In this case, it will re-render our template, which is pretty magical. </p>
+<p>If we take a brief look at the accompanying <span class="code">meteor-intro.html</span> file, we'll see the Template
+we're talking to: 
+<script src="https://gist.github.com/2385010.js"> </script></p>
+<p>That's it there.  Looking back at our JS, you'll see that the <span class="code">Template.hello.greeting</span> is
+mapping to a Template, named 'hello', with a 'greeting' variable.  The 'greeting' might also have been an object, which
+would require some more special handling in the Template HTML code, but it's about as straightforward as you'd expect.
+Not having worked with Mustache before, this was confusing to me at first, so don't feel horrible if it takes a few
+tries to 'get it'.  (If it takes less, feel free to gloat about how much smarter you are than me.  I'm used to it.)</p>
+<p>The next bit of code <span class="code">Template.hello.events</span> binds event listeners to the "hello" Template.
+This is similar to how <a href="http://backbonejs.org/">Backbone</a> handles events, so if you're familiar with that,
+you should be hip here.  If not, it's easily explained, though I don't know what events are supported out of the box: 
+<span class="code">"click input"</span> means that we're binding the 'click' event on 'input' selectors to the function
+we define (which, in this case, appends to console.log).  If we wanted to bind a link, it would instead be <span
+class="code">"click a"</span> or <span class="code">"click a.new_link"</span>, where 'new_link' is a class name.)</p>
+<p>We could, of course, also bind to spans, divs, classes or IDs as well.  The events appear to be jQuery events, and
+should support all jQuery event types, though I haven't tested that.  You could bind 'keyup', 'keydown', 'mouseover',
+etc.</p>
+<h2>Wrapping Up</h2>
+
+<p>That pretty much sums up the anatomy of the intro project.  In our next run, we'll look at inserting and querying the
+Mongo data store, looping through record sets with Mustache, and perhaps even working with Route handlers to create new
+screens in our application.  </p>
+
+                </div>
+            </div>
+        </div>
+       <script type="text/javascript">ml_client_token="2bbef7cf-5b53-4edd-919f-33b57901c802";</script> 
+       <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-372592-13']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ?  'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script>
+   </body>
+</html>
