@@ -22,7 +22,6 @@ p { margin: 20px 0 20px 0; }
 
 #body { margin-left: 200px; }
 .blog { margin: 10px 0 10px 0; border-bottom: 1px solid #e3e3e3; }
-.blog_footer { text-align: right; margin: 10px 0 10px 0; }
 
 #column_left { float: left; width: 200px;}
 #column_right { float: left; width: 720px; margin: 20px 0 0 0; text-align: left; }
@@ -30,6 +29,10 @@ p { margin: 20px 0 20px 0; }
 .comment { border-top: 1px solid #ccc; padding: 10px 0 10px 0; margin: 10px 0 10px 0; }
 .comment_name { float: left; width: 150px; }
 .comment_content { float: left; display: block; }
+
+#footer { 
+    font-size: 10px;
+}
 
 label { width: 100px; display: block; clear: none; float: left; margin: 3px 0 3px 0; }
 input { width: 300px; border: 1px solid #bbb; margin: 3px 0 3px 0; }
