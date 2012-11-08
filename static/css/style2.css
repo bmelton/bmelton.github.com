@@ -1,0 +1,129 @@
+/* @font-face {
+  font-family: 'Prociono';
+  font-style: normal;
+  font-weight: normal;
+  src: url("ProcionoTT.eot");
+  src: local('Prociono'), url('http://sympodial.com/font/Prociono.otf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Prociono';
+	src: url("http://sympodial.com/font/ProcionoTT.eot");
+	src: local('Prociono'),
+		url("http://sympodial.com/font/ProcionoTT.otf") format('opentype');
+} */
+
+@font-face {
+	font-family: 'ProcionoRegular';
+
+	src: url('/css/prociono-webfont.eot');
+
+	src: local('.'), 
+	url('/css/prociono-webfont.woff') format('woff'),
+	url('/css/prociono-webfont.ttf') format('truetype'),
+	url('/css/prociono-webfont.svg#webfont7CbB5lA1') format('svg');
+
+	font-weight: normal;
+
+	font-style: normal;
+
+}
+
+body { 
+	margin: 15px auto; 
+	text-align: center; 
+	font-family: Verdana, sans-serif; 
+	font-size: 12pt; 
+	background: #ffffff url('/images/bg.png') repeat-x; 
+}
+
+img { border: 0; }
+A:Link { color: #0066ff; text-decoration: none; }
+A:Visited { color: #0066ff; text-decoration: none; }
+
+h1 { font-size: 40px; margin: 0; color: #0066ff; font-weight: normal; font-family: 'ProcionoRegular', sans-serif; }
+h1 A:Hover { text-decoration: none; border-bottom: 3px solid #0066ff; }
+h2 { font-size: 12pt; margin: 20px 0 0 0; color: #666666; font-weight: bold; font-family: 'ProcionoRegular', sans-serif; } 
+
+.author { font-size: 10pt; color: #666666; }
+.clear  { width: 100%; clear: both; display: block; }
+p { margin: 10px 0 10px 0; }
+
+#body { margin-left: 200px; }
+.blog { margin: 10px 0 10px 0; border-bottom: 1px solid #e3e3e3; }
+.blog_footer { text-align: right; margin: 10px 0 10px 0; }
+
+#column_left { float: left; width: 200px;}
+#column_right { float: left; width: 720px; margin: 20px 0 0 0; text-align: left; }
+
+.comment { border-bottom: 1px solid #e3e3e3; padding: 0 0 10px 0; }
+.comment_name { float: left; width: 150px; }
+.comment_content { float: left; }
+
+label { width: 100px; display: block; clear: none; float: left; margin: 3px 0 3px 0; }
+input { width: 300px; border: 1px solid #bbb; margin: 3px 0 3px 0; }
+input[type=submit] { width: 90px; float: right; }
+
+textarea { width: 760px; height: 200px; display: block; clear: both; border: 1px solid #bbb; }
+#content { margin: 10px 0 40px 0; font-size: 8pt;  }
+/* h1 { font-family: 'ProcionoRegular', sans-serif; color: black; font-size: 22pt; } */
+#content p { font-size: 10pt; text-justify: newspaper; }
+
+div.project {
+	display: block;
+	clear: both;
+	margin: 0 0 20px 0;
+	padding: 20px 0;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+div.image { 
+	float: left;
+	clear: left;
+	position: relative;
+	width: 190px;
+}
+
+div.description { 
+	float: left;
+	position: relative;
+	left: 10px;
+	width: 560px;
+	padding-left: 10px;
+	clear: right;
+	display: block;
+}
+
+#header { height: 100px; padding-top: 10px; } 
+
+#footer { font-family: Verdana, sans-serif; font-size: 8pt; margin: 10px 0 10px 0; }
+#footer A:Link, #footer A:Visited { color: #666666; text-decoration: none; }
+#footer A:Hover { text-decoration: underline; }
+#footer_graphic { margin-top: 20px; }
+#footer_left { float: left; }
+#footer_right { float: right; }
+#logo { float: left; margin: 0px 0; position: absolute; left: -15px; top: 10px; background: url('/images/logo_bg.png'); width: 201px; height: 273px;  }
+#logo img { margin: 15px 0 0 20px;  }
+
+#main { margin: 0 auto; width: 960px; text-align: left; position: relative; }
+
+#nav { position: absolute; top: 30px; left: 200px; }
+#nav UL { list-style-type: none; margin: 0; padding: 0; }
+#nav UL LI { float: left; margin-right: 45px;  }
+#nav UL LI A:Link, #nav UL LI A:Visited { /*color: black;*/ text-decoration: none; font-family: 'ProcionoRegular', sans-serif; font-weight: normal; font-size: 18px; }
+#nav UL LI A:Hover { text-decoration: underline; }
+
+#social { position: absolute; top: 30px; right: 0; }
+#subcontent { padding-top: 10px; background: url('/images/sub_bg.png') repeat-x; min-height: 100px; font-family: Verdana, sans-serif; font-size: 80%;  }
+
+#sub_column_1 { float: left; width: 230px; }
+#sub_column_2 { float: left; width: 230px; margin-left: 35px; }
+#sub_column_3 { float: left; width: 230px; margin-left: 35px; }
+
+.sub_post_title { margin: 0; }
+.sub_post_author { margin: 0 0 15px 0; }
+
+#subcontent h2 { margin: 0 0 15px 0; font-family: Prociono; font-weight: bold; color: black; font-size: 12pt; border-bottom: dotted 1px #ccc;  }
+
+#teaser { position: absolute; top: 70px; left: 200px; }
+
