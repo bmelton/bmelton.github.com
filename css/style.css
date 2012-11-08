@@ -37,8 +37,8 @@ p { margin: 20px 0 20px 0; }
     padding: 0; 
     margin: 100px 20px 0 0; 
     border-top: 1px solid #ccc;
-    position: fixed;
-    bottom: 0; 
+    position: absolute;
+    top: 425px;
     width: 200px;
 }
 
