@@ -114,6 +114,7 @@ span.code {
 
 #recent ul li { 
     max-width: 210px;
+    font-size: 90%;
 }
 
 h1 a:Link, h1 a:visited {
